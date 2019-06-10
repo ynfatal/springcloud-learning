@@ -1,0 +1,27 @@
+server:
+  port: 8761
+
+# eureka 配置
+eureka:
+  # Eureka Server 的默认值看 EurekaServerConfigBean
+  server:
+    # 是否开启自我保护（生产环境建议修改为 true）
+    enable-self-preservation: false
+    # 清理间隔计时器（毫秒）默认值为 60 * 1000
+#    eviction-interval-timer-in-ms: 60000
+  instance:
+    hostname: localhost
+  # Eureka Client 的默认值看 EurekaClientConfigBean
+  client:
+    # 指定是否向` Eureka 服务器（由 defaultZone 配置，可以多个）`注册`本 Eureka 客户端`
+    #（单个 Eureka Server 没必要，设置为 false；`注册中心高可用配置`则必须设置为 true）
+    register-with-eureka: false
+    # 表示此客户端是否应从 Eureka 服务器获取 Eureka 注册表信息。默认值为 true
+#    fetch-registry: true
+    # 表示从 Eureka 服务器获取注册表信息的频率（秒）。默认值为 30
+    registry-fetch-interval-seconds: 5
+#    service-url:
+      # defaultZone 在 `Eureka 服务器配置`中，一般用于高可用配置，Eureka 服务器之间相互注册。
+      #（Eureka Server 也是一个 Eureka Client，官网说的）
+      # defaultZone 是个Map。默认值为 http://localhost:8761/eureka
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
