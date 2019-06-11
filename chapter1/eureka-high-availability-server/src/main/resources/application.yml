@@ -1,0 +1,67 @@
+########################       Eureka Server 高可用      ########################
+
+
+########################     Eureka 本地测试      ########################
+
+spring:
+  profiles:
+    active: peer1
+  application:
+    name: eureka-server
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8761/eureka/, http://peer2:8762/eureka/, http://peer3:8763/eureka/
+
+
+---
+
+server:
+  port: 8761
+spring:
+  profiles: peer1
+eureka:
+  instance:
+    hostname: peer1
+
+---
+
+server:
+  port: 8762
+spring:
+  profiles: peer2
+eureka:
+  instance:
+    hostname: peer2
+
+---
+
+server:
+  port: 8763
+spring:
+  profiles: peer3
+eureka:
+  instance:
+    hostname: peer3
+
+########################    Eureka 本地测试（end）    ########################
+
+
+
+  ########################      Eureka 模拟生产测试     ########################
+
+#server:
+#  port: 8761
+#
+#spring:
+#  application:
+#    name: eureka-server
+#
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    serviceUrl:
+#      defaultZone: http://192.168.0.107:8761/eureka/, http://192.168.0.108:8761/eureka/, http://192.168.0.109:8761/eureka/
+
+########################    Eureka 模拟生产测试（end）    ########################

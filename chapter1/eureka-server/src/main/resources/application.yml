@@ -9,8 +9,8 @@ eureka:
     enable-self-preservation: false
     # 清理间隔计时器（毫秒）默认值为 60 * 1000
 #    eviction-interval-timer-in-ms: 60000
-  instance:
-    hostname: localhost
+#  instance:
+#    hostname: localhost
   # Eureka Client 的默认值看 EurekaClientConfigBean
   client:
     # 指定是否向` Eureka 服务器（由 defaultZone 配置，可以多个）`注册`本 Eureka 客户端`
