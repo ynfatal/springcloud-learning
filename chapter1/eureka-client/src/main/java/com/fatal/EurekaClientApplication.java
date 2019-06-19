@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 如果是其他的注册中心，那么推荐使用@EnableDiscoveryClient。
  */
 @SpringBootApplication
-// 开启发现 Eureka 客户端相关配置
+// 开启 Eureka 客户端相关配置
 @EnableEurekaClient
 @RestController
 public class EurekaClientApplication {
