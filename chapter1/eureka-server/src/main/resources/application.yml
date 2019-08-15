@@ -15,6 +15,7 @@ eureka:
   client:
     # 指定是否向` Eureka 服务器（由 defaultZone 配置，可以多个）`注册`本 Eureka 客户端`
     #（单个 Eureka Server 没必要，设置为 false；`注册中心高可用配置`则必须设置为 true）
+    # 默认值为 true
     register-with-eureka: false
     # 表示此客户端是否应从 Eureka 服务器获取 Eureka 注册表信息。默认值为 true
 #    fetch-registry: true
